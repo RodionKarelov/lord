@@ -35,7 +35,7 @@ dofile(minetest.get_modpath("lottachievements").."/triggers.lua")
 
 minetest.register_craftitem("lottachievements:achievement_book", {
 	description = SL("Achievements Book"),
-	inventory_image = "lottblocks_book_gold.png",
+	inventory_image = "lottachievements_achievement_book.png",
 	groups = {book=1},
 	stack_max = 1,
 	on_place = function(_, player)
@@ -73,7 +73,7 @@ lottachievements.register_achievement("master_craftsman", {
 lottachievements.register_achievement("i_achieved_this", {
 	title = SL("I achieved this!"),
 	description = SL("Make the Achievements Book"),
-	icon = "lottblocks_book_gold.png",
+	icon = "lottachievements_achievement_book.png",
 	id = 2,
 	trigger = {
 		type = "craft",
@@ -683,7 +683,7 @@ lottachievements.register_achievement("so_dead_im_immortal", {
 })
 
 lottachievements.register_achievement("supersonic_speed", {
-	title = SL("At The Speed Of Light"),
+	title = SL("Supersonic Speed"),
 	description = SL("Craft a palantir"),
 	icon = "default_obsidian.png",
 	requires = "master_craftsman",
@@ -752,7 +752,7 @@ lottachievements.register_achievement("daggins_surname", {
 
 lottachievements.register_achievement("lottachievements_the_lie", {
 	title = SL("The Lie"),
-	description = SL("Craft the Honey Cake"),
+	description = SL("Craft the Cake"),
 	icon = "lottfarming_honey_cake.png",
 	secret = true,
 	id = 55,
@@ -852,7 +852,6 @@ lottachievements.register_achievement("polisher", {
  	requires = "a_pickaxe_fit_for_a_king",
  	id = 64,
  })
-
 
 -- lottachievements.register_achievement("a_long_path_to_mushrooms", {
 -- 	title = SL("A Long Path to Mushrooms"),
@@ -1054,7 +1053,55 @@ lottachievements.register_achievement("abandoned_workshop", {
  	}
  })
 
+lottachievements.register_achievement("ringsilver_crafter", {
+ 	title = SL("Ringsilver crafter"),
+ 	description = SL("Form your first ingot of ringsilver!"),
+ 	icon = "lottother_ringsilver_ingot.png",
+ 	requires = "abandoned_workshop",
+ 	id = 38,
+ })
 
+lottachievements.register_achievement("the_ring_is_prepared", {
+	title = SL("The Ring is Prepared..."),
+	description = SL("Make a ring ready to have a gem fitted to it"),
+	icon = "lottother_prepared_ring.png",
+	requires = "ringsilver_crafter",
+	id = 39,
+	trigger = {
+		type = "craft",
+		item = "lottother:prepared_ring",
+		target = 1,
+	}
+})
+
+lottachievements.register_achievement("a_pickaxe_fit_for_a_king", {
+ 	title = SL("A pickaxe fit for a king"),
+ 	description = SL("Craft a gem pickaxe"),
+ 	icon = "lottother_gempick.png",
+ 	requires = "abandoned_workshop",
+ 	id = 40,
+ 	trigger = {
+ 		type = "craft",
+ 		item = "lottother:gem_pick",
+ 		target = 1,
+ 	}
+ })
+
+lottachievements.register_achievement("polisher", {
+ 	title = SL("Polisher"),
+ 	description = SL("Polish a gem"),
+ 	icon = "lottother_redgem.png",
+ 	requires = "a_pickaxe_fit_for_a_king",
+ 	id = 41,
+ })
+
+lottachievements.register_achievement("ring_smith", {
+ 	title = SL("Ring Smith"),
+ 	description = SL("Forge a ring of power"),
+ 	requires = "polisher",
+ 	icon = "lottother_narya.png",
+ 	id = 42,
+ })
 ]]
 
 --[[
