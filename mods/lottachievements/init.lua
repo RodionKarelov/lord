@@ -38,10 +38,10 @@ minetest.register_craftitem("lottachievements:achievement_book", {
 	inventory_image = "lottblocks_book_gold.png",
 	groups = {book=1},
 	stack_max = 1,
-	on_place = function(_, player)
+	--[[on_place = function(_, player)
 		local name = player:get_player_name()
 		lottachievements.show_to(name, name)
-	end,
+	end,]]
 	on_use = function(_, player)
 		local name = player:get_player_name()
 		lottachievements.show_to(name, name)
