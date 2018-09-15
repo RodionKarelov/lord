@@ -200,7 +200,7 @@ for _, nn in pairs({"active", "inactive"}) do
 	if nn == "active" then
 		groups.not_in_creative_inventory = 1
 	end
-	minetest.register_node("lottblocks:dual_furnace_" .. nn, {
+	minetest.register_node(":lottother:dual_furnace_" .. nn, {
 		description = SL("Dual Furnace"),
 		tiles = {
 			"default_furnace_top.png",
