@@ -262,3 +262,10 @@ minetest.register_craft({
 		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
 	}
 })
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "lottpotion:cauldron_full",
+	recipe = {"lottpotion:cauldron_empty", "bucket:bucket_water",},
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
+})
