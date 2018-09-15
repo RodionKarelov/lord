@@ -42,68 +42,50 @@ lottblocks.crafting.add_craft("lottother:goldsilver", {
 	time = 30,
 })
 
--- Охлаждение горячего Юв.Серебра в воде.
--- Очень замудренно!!!
--- Не лазь сюда, говорю.
--- Тут черт ногу сломит
--- Я сам как черт
--- Хотя.. Ладно, иди вниз
-
--- Нам нужно продублировать "minetest.item_drop", чтобы функция возвратила сущность...
-local function item_drop(itemstack, dropper, pos)
-	if dropper and dropper:is_player() then
-		local v = dropper:get_look_dir()
-		local p = {x=pos.x, y=pos.y+1.2, z=pos.z}
-		local cs = itemstack:get_count()
-		local inv = dropper:get_inventory()
-		local ind = dropper:get_wield_index()
-		if dropper:get_player_control().sneak then
-			cs = 1
-		end
-		local item = itemstack:take_item(cs)
-		local obj = minetest.add_item(p, item)
-		if obj then
-			v.x = v.x*2
-			v.y = v.y*2 + 2
-			v.z = v.z*2
-			obj:setvelocity(v)
-			obj:get_luaentity().dropped_by = dropper:get_player_name()
-			inv:set_stack("main", ind, "")
-			return obj
-		end
-	else
-		if minetest.add_item(pos, itemstack) then
-			return itemstack
-		end
-	end
-end
-
--- Все Понятно? Мне нифига.
+--Горячее ювелирное серебро
 
 minetest.register_craftitem("lottother:hot_ringsilver", {
 	description = SL("Hot Ringsilver"),
 	inventory_image = "lottother_hot_ringsilver.png",
-    groups = {forbidden=1},
-	stack_max = 1,
-	on_drop = function(itemstack, dropper, pos)
-		local metadata = itemstack:get_metadata()
-		local ent = item_drop(itemstack, dropper, pos)
-		minetest.after(10, function()
-			if ent ~= nil and metadata ~= nil then
-				local pos = ent:getpos()
-				if pos ~= nil then
-					local node = minetest.get_node(pos).name
-					ent:remove()
-					if node == "default:water_source" --[[(Из-за этого крашится игра, эту херь вообще надо отсюда убрать) and os.time() - tonumber(metadata) <= 13]] then
-						minetest.add_item(pos, "lottother:ringsilver")
-					end
-					if dropper and dropper:get_player_name() then
-						lottachievements.unlock(dropper:get_player_name(), "ringsilver_crafter")
-					end
-				end
+    	groups = {forbidden=1},
+	stack_max = 32,
+	--Охлаждение:
+	on_use = function(itemstack, user, pointed_thing)
+		local res = nil
+		pos = pointed_thing.above
+		if pos == nil then return itemstack end
+		pos.y = pos.y - 1
+		if (minetest.get_node(pos).name == "lottpotion:cauldron_full") then
+			minetest.remove_node(pos)
+			minetest.set_node(pos, {name="lottpotion:cauldron_two_third_full"})
+			itemstack:take_item()
+			res = user:get_inventory():add_item("main", "lottother:ringsilver")
+			if res then
+				minetest.item_drop(res, user, pos)
 			end
-		end)
-	end,
+			return itemstack
+		end
+		if (minetest.get_node(pos).name == "lottpotion:cauldron_two_third_full") then
+			minetest.remove_node(pos)
+			minetest.set_node(pos, {name="lottpotion:cauldron_one_third_full"})
+			itemstack:take_item()
+			res = user:get_inventory():add_item('main', "lottother:ringsilver")
+			if res then
+				minetest.item_drop(res, user, pos)
+			end
+			return itemstack
+		end
+		if (minetest.get_node(pos).name == "lottpotion:cauldron_one_third_full") then
+			minetest.remove_node(pos)
+			minetest.set_node(pos, {name="lottpotion:cauldron_empty"})
+			itemstack:take_item()
+			res = user:get_inventory():add_item('main', "lottother:ringsilver")
+			if res then
+				minetest.item_drop(res, user, pos)
+			end
+			return itemstack
+		end
+	end
 })
 
 minetest.register_craftitem("lottother:ringsilver", {
@@ -114,7 +96,6 @@ minetest.register_craftitem("lottother:ringsilver", {
 
 ---------------------------------------------------------
 -----          Печь для ювелирного серебра          -----
------              (ОЧЕНЬ СЛОЖНЫЙ КОД!)             -----
 ---------------------------------------------------------
 
 local formspec = "size[8,8]"..
