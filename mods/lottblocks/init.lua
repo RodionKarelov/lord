@@ -10,7 +10,7 @@ dofile(minetest.get_modpath("lottblocks").."/chests.lua")
 dofile(minetest.get_modpath("lottblocks").."/lamps.lua")
 dofile(minetest.get_modpath("lottblocks").."/palantiri.lua")
 dofile(minetest.get_modpath("lottblocks").."/guides.lua")
-dofile(minetest.get_modpath("lottblocks").."/crafting.lua")
+dofile(minetest.get_modpath("lottblocks").."/dual_furnace.lua")
 
 minetest.register_node("lottblocks:snowycobble", {
 	description = SL("Snowy Cobblestone"),
