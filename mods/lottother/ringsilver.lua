@@ -85,6 +85,9 @@ minetest.register_craftitem("lottother:hot_ringsilver", {
 			end
 			return itemstack
 		end
+		if user and user:get_player_name() and (minetest.get_node(pos).name == "lottpotion:cauldron_one_third_full") and (minetest.get_node(pos).name == "lottpotion:cauldron_two_third_full") and (minetest.get_node(pos).name == "lottpotion:cauldron_full") then
+			lottachievements.unlock(user:get_player_name(), "ringsilver_crafter")
+		end
 	end
 })
 
