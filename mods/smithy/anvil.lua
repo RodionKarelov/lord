@@ -70,11 +70,13 @@ minetest.register_node(":castle:anvil", {
 		local meta = minetest.get_meta(pos);
 		local inv = meta:get_inventory();
 		local owner = meta:get_string('owner');
-		if( not( inv:is_empty("input"))
-			or not( inv:is_empty("hammer"))
-			or not( player )
-			or ( owner and owner ~= '' and player:get_player_name() ~= owner )) then
-			minetest.chat_send_player( player:get_player_name(), SL('Can not break. Something is inside.'));
+		if not inv:is_empty("input")
+			or not inv:is_empty("hammer")
+			or not player then
+				minetest.chat_send_player( player:get_player_name(), SL('Can not break. Something is inside.'));
+			return false;
+		elseif owner and owner ~= '' and player:get_player_name() ~= owner  then
+			minetest.chat_send_player(player:get_player_name(), SL("Only for @1", owner)),
 			return false;
 		end
 		return true;
@@ -111,13 +113,29 @@ minetest.register_node(":castle:anvil", {
 			minetest.chat_send_player(player:get_player_name(), SL('You can not repair rings!'));
 			return 0;
 		end
+		if listname=='input' and stack:get_name() == "lottother:vilya" then
+			minetest.chat_send_player(player:get_player_name(), SL('You can not repair rings!'));
+			return 0;
+		end
+		if listname=='input' and stack:get_name() == "lottother:narya" then
+			minetest.chat_send_player(player:get_player_name(), SL('You can not repair rings!'));
+			return 0;
+		end		
+		if listname=='input' and stack:get_name() == "lottother:nenya" then
+			minetest.chat_send_player(player:get_player_name(), SL('You can not repair rings!'));
+			return 0;
+		end
+		if listname=='input' and stack:get_name() == "lottother:beast_ring" then
+			minetest.chat_send_player(player:get_player_name(), SL('You can not repair rings!'));
+			return 0;
+		end
 
 		return stack:get_count()
 	end,
 
 	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
 		local meta = minetest.get_meta(pos)
-		if( player and player:get_player_name() ~= meta:get_string('owner' ) and listname~="input") then
+		if player and player:get_player_name() ~= meta:get_string('owner') and listname~="input" then
 			return 0
 		end
 		return stack:get_count()
