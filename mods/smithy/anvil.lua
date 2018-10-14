@@ -43,10 +43,6 @@ minetest.register_node(":castle:anvil", {
 	drawtype = "nodebox",
 	description = SL("Anvil"),
 	tiles = {"lottores_galvorn_block.png"},
-minetest.registered_items[itemstack:get_name()].description
-		end
-		local meta = minetest.get_meta(pos)
-		if clicker:get_player_name() == meta:get_string("owner") then
 	groups = {cracky=2,falling_node=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
