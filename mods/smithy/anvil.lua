@@ -84,7 +84,7 @@ minetest.register_node(":castle:anvil", {
 
 	allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		local meta = minetest.get_meta(pos)
-		if( player and player:get_player_name() ~= meta:get_string('owner' ) and from_list~="input") then
+		if player and player:get_player_name() ~= meta:get_string('owner') and from_list~='input' then
 			return 0
 		end
 		return count;
@@ -92,7 +92,7 @@ minetest.register_node(":castle:anvil", {
 
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
 		local meta = minetest.get_meta(pos)
-		if( player and player:get_player_name() ~= meta:get_string('owner' ) and listname~="input") then
+		if player and player:get_player_name() ~= meta:get_string('owner') and listname~='input' then
 			return 0;
 		end
 		if listname=='hammer' and stack and stack:get_name() ~= 'tools:warhammer_steel' 
@@ -135,7 +135,7 @@ minetest.register_node(":castle:anvil", {
 
 	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
 		local meta = minetest.get_meta(pos)
-		if player and player:get_player_name() ~= meta:get_string('owner') and listname~="input" then
+		if player and player:get_player_name() ~= meta:get_string('owner') and listname~='input' then
 			return 0
 		end
 		return stack:get_count()
