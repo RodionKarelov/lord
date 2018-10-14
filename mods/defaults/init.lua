@@ -57,6 +57,7 @@ function ghost.register_ghost_material(name)
 		node.groups = {}
 	end
 	node.groups.ghostly = 1
+	node.groups.not_in_creative_inventory = 1
 	if type(node.drop) == "string" then
 		node.drop = {
 			maxitems = 1,
@@ -99,6 +100,7 @@ end
 minetest.register_tool("defaults:ghost_tool", {
 	description = "Призрачный посох",
 	inventory_image = "ghost_tool.png",
+	wield_scale = {x=2, y=2, z=1},
 	on_use = function(itemstack, user, pointed_thing)
 		local pt = pointed_thing
 		local creative = minetest.settings:get_bool("creative_mode")

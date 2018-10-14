@@ -1,5 +1,5 @@
 ### craftitems.lua ###
-Stick	=	Палочка
+Stick	=	Палка
 Paper	=	Бумага
 Book	=	Книга
 Coal Lump	=	Каменный уголь
@@ -34,7 +34,7 @@ Dirt with Grass	=	Земля с травой
 Dirt with Grass and Footsteps	=	Земля с травой и следами
 Dirt with Snow	=	Земля со снегом
 Dirt		=	Земля
-Sand		=	Песок
+Sand		=	Кварцевый песок
 Desert Sand	=	Пустынный песок
 Gravel		=	Гравий
 Sandstone	=	Песчаник
@@ -53,7 +53,7 @@ Leaves	=	Ветки яблони
 Cactus	=	Кактус
 Papyrus	=	Папирус (Тростник)
 Bookshelf	=	Книжная полка
-Glass	=	Стекло
+Glass	=	Кварцевое стекло
 Wooden Fence	=	Деревянный забор
 Rail	=	Рельсы
 Ladder	=	Лестница
@@ -93,7 +93,7 @@ Ice	=	Лёд
 Snow	=	Снег
 Snow Block	=	Снежный блок
 
-owned by	=	только для
+owned by	=	владелец:
 
 ### furnace.lua ###
 Furnace = Печь

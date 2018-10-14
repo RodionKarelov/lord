@@ -98,7 +98,6 @@ minetest.register_node(":castle:anvil", {
 					minetest.pos_to_string(pos))
 			return 0
 		end
-		
 		return count;
 	end,
 
@@ -228,6 +227,7 @@ minetest.register_node(":castle:anvil", {
 				alignment = {x = 0, y = 0},
 				offset = {x = -160, y = 0},
 				size = {x=16, y=16},
+
 			})
 
 			hud3 = puncher:hud_add({

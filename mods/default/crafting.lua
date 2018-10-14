@@ -334,11 +334,12 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+--Old Craft recipe of bronze ingot
+--[[minetest.register_craft({
 	type = "shapeless",
 	output = "default:bronze_ingot",
 	recipe = {"lottores:tin_ingot", "default:copper_ingot"},
-})
+})]]--
 
 minetest.register_craft({
 	type = "shapeless",
@@ -358,10 +359,23 @@ minetest.register_craft({
 -- Cooking recipes
 --
 
-minetest.register_craft({
+--Old Craft recipe of glass
+--[[minetest.register_craft({
 	type = "cooking",
 	output = "default:glass",
 	recipe = "group:sand",
+})]]--
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:glass",
+	recipe = "default:desert_sand",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:glass",
+	recipe = "quartz:quartz_crystal",
 })
 
 minetest.register_craft({
@@ -458,6 +472,12 @@ minetest.register_craft({
 --
 -- Fuels
 --
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "group:stick",
+	burntime = 2,
+})
 
 minetest.register_craft({
 	type = "fuel",
