@@ -43,6 +43,10 @@ minetest.register_node(":castle:anvil", {
 	drawtype = "nodebox",
 	description = SL("Anvil"),
 	tiles = {"lottores_galvorn_block.png"},
+minetest.registered_items[itemstack:get_name()].description
+		end
+		local meta = minetest.get_meta(pos)
+		if clicker:get_player_name() == meta:get_string("owner") then
 	groups = {cracky=2,falling_node=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -60,7 +64,11 @@ minetest.register_node(":castle:anvil", {
 	after_place_node = function(pos, placer)
 		local meta = minetest.get_meta(pos);
 		meta:set_string("owner", placer:get_player_name() or "");
-		meta:set_string("infotext", SL("Anvil (owned by %s)"):format((meta:get_string("owner") or "")));
+		meta:set_string("infotext", SL("Anvil (ownminetest.registered_items[itemstack:get_name()].description
+		end
+		local meta = minetest.get_meta(pos)
+		if clicker:get_player_name() == meta:get_string("owner") then
+ed by %s)"):format((meta:get_string("owner") or "")));
 		meta:set_string("formspec",
 		smithy_anvil_formspec,
 		"label[2.5,-0.5;"..SL("Owner: %s"):format(meta:get_string('owner') or "").."]");
@@ -190,7 +198,7 @@ minetest.register_node(":castle:anvil", {
 
 		local hud1 = puncher:hud_add({
 				hud_elem_type = "image",
-				scale = {x = 15, y = 15},
+				scale = {x = 10, y = 10},
 				text = hud_image,
 				position = {x = 0.5, y = 0.5},
 				alignment = {x = 0, y = 0}
@@ -206,8 +214,8 @@ minetest.register_node(":castle:anvil", {
 				direction = 0, -- left to right
 				position = {x=0.5, y=0.65},
 				alignment = {x = 0, y = 0},
-				offset = {x = -320, y = 0},
-				size = {x=32, y=32},
+				offset = {x = -160, y = 0},
+				size = {x=16, y=16},
 			})
 
 			hud3 = puncher:hud_add({
@@ -217,8 +225,8 @@ minetest.register_node(":castle:anvil", {
 				direction = 0, -- left to right
 				position = {x=0.5, y=0.65},
 				alignment = {x = 0, y = 0},
-				offset = {x = -320, y = 0},
-				size = {x=32, y=32},
+				offset = {x = -160, y = 0},
+				size = {x=16, y=16},
 			});
 		end
 
