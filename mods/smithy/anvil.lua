@@ -92,11 +92,12 @@ minetest.register_node(":castle:anvil", {
 
 	allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		local meta = minetest.get_meta(pos)
-		if not has_locked_chest_privilege(meta, player) then
+		if not has_anvil_privilege(meta, player) then
 			minetest.log("action", player:get_player_name()..
 					" tried to access a anvil belonging to "..
 					meta:get_string("owner").." at "..
 					minetest.pos_to_string(pos))
+			minetest.chat_send_player(player:get_player_name(), SL("Only for @1", owner))
 			return 0
 		end
 		
@@ -105,11 +106,12 @@ minetest.register_node(":castle:anvil", {
 
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
 		local meta = minetest.get_meta(pos)
-		if not has_locked_chest_privilege(meta, player) then
+		if not has_anvil_privilege(meta, player) then
 			minetest.log("action", player:get_player_name()..
 					" tried to access a anvil belonging to "..
 					meta:get_string("owner").." at "..
 					minetest.pos_to_string(pos))
+			minetest.chat_send_player(player:get_player_name(), SL("Only for @1", owner))
 			return 0
 		end
 
@@ -194,7 +196,7 @@ minetest.register_node(":castle:anvil", {
 
 	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
 		local meta = minetest.get_meta(pos)
-		if not has_locked_chest_privilege(meta, player) then
+		if not has_anvil_privilege(meta, player) then
 			minetest.log("action", player:get_player_name()..
 					" tried to access a anvil belonging to "..
 					meta:get_string("owner").." at "..
