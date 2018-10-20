@@ -62,7 +62,8 @@ minetest.register_tool("lottthrowing:bow_wood", {
 	description = SL("Normal Wood Bow"),
 	groups = {wooden = 1},
 	inventory_image = "lottthrowing_bow_wood.png",
-   stack_max = 1,
+	wield_scale = {x=1.5,y=1.5,z=1},
+	stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_arrow(itemstack, user, pointed_thing) then
 			if not minetest.settings:get_bool("creative_mode") then
@@ -77,7 +78,8 @@ minetest.register_tool("lottthrowing:bow_wood_alder", {
 	description = SL("Alder Wood Bow"),
 	groups = {wooden = 1},
 	inventory_image = "lottthrowing_bow_wood_alder.png",
-   stack_max = 1,
+	wield_scale = {x=1.5,y=1.5,z=1},
+	stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_arrow(item, user, pointed_thing) then
 			if not minetest.settings:get_bool("creative_mode") then
@@ -92,7 +94,8 @@ minetest.register_tool("lottthrowing:bow_wood_birch", {
 	description = SL("Birch Wood Bow"),
 	groups = {wooden = 1},
 	inventory_image = "lottthrowing_bow_wood_birch.png",
-   stack_max = 1,
+	wield_scale = {x=1.5,y=1.5,z=1},
+	stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_arrow(item, user, pointed_thing) then
 			if not minetest.settings:get_bool("creative_mode") then
@@ -107,7 +110,8 @@ minetest.register_tool("lottthrowing:bow_wood_lebethron", {
 	description = SL("Lebethron Wood Bow"),
 	groups = {wooden = 1},
 	inventory_image = "lottthrowing_bow_wood_lebethron.png",
-   stack_max = 1,
+	wield_scale = {x=1.5,y=1.5,z=1},
+	stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_arrow(item, user, pointed_thing) then
 			if not minetest.settings:get_bool("creative_mode") then
@@ -122,7 +126,8 @@ minetest.register_tool("lottthrowing:bow_wood_mallorn", {
 	description = SL("Mallorn Bow"),
 	groups = {wooden = 1},
 	inventory_image = "lottthrowing_bow_wood_mallorn.png",
-   stack_max = 1,
+	wield_scale = {x=1.5,y=1.5,z=1},
+	stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_arrow(item, user, pointed_thing) then
 			if not minetest.settings:get_bool("creative_mode") then
@@ -182,6 +187,7 @@ minetest.register_tool("lottthrowing:crossbow_wood", {
 	description = SL("Wooden Crossbow"),
 	groups = {wooden = 1},
 	inventory_image = "lottthrowing_crossbow_wood.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_bolt(itemstack, user, pointed_thing) then
@@ -197,6 +203,7 @@ minetest.register_tool("lottthrowing:crossbow_steel", {
 	description = SL("Steel Crossbow"),
 	groups = {steel_item = 1},
 	inventory_image = "lottthrowing_crossbow_steel.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_bolt(itemstack, user, pointed_thing) then
@@ -212,6 +219,7 @@ minetest.register_tool("lottthrowing:crossbow_tin", {
 	description = SL("Tin Crossbow"),
 	groups = {tin_item = 1},
 	inventory_image = "lottthrowing_crossbow_tin.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_bolt(item, user, pointed_thing) then
@@ -227,6 +235,7 @@ minetest.register_tool("lottthrowing:crossbow_silver", {
 	description = SL("Silver Crossbow"),
 	groups = {silver_item = 1},
 	inventory_image = "lottthrowing_crossbow_silver.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_bolt(item, user, pointed_thing) then
@@ -242,6 +251,7 @@ minetest.register_tool("lottthrowing:crossbow_gold", {
 	description = SL("Gold Crossbow"),
 	groups = {gold_item = 1},
 	inventory_image = "lottthrowing_crossbow_gold.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_bolt(item, user, pointed_thing) then
@@ -257,6 +267,7 @@ minetest.register_tool("lottthrowing:crossbow_galvorn", {
 	description = SL("Galvorn Crossbow"),
 	groups = {galvorn_item = 1},
 	inventory_image = "lottthrowing_crossbow_galvorn.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
      groups = {forbidden=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
@@ -273,6 +284,7 @@ minetest.register_tool("lottthrowing:crossbow_mithril", {
 	description = SL("Mithril Crossbow"),
 	groups = {mithril_item = 1},
 	inventory_image = "lottthrowing_crossbow_mithril.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if lottthrowing_shoot_bolt(item, user, pointed_thing) then
