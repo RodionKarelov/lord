@@ -6,10 +6,11 @@ minetest.register_privilege("admin_pick", {
 })
 
 minetest.register_tool("worldedit:admin_stick", {
-	description = "Admins Magic Stick",
+	description = "Магический Посох Админов",
 	inventory_image = "tool_magic_stick.png",
 	range = 7,
-   on_use = function(itemstack, user, pointed_thing)
+	wield_scale = {x=1.5,y=1.5,z=1},
+	on_use = function(itemstack, user, pointed_thing)
 	    -- Must be pointing to facedir applicable node
 	    if pointed_thing.type~="node" then return end
 	    local user_name = user:get_player_name()
@@ -89,10 +90,11 @@ minetest.register_tool("worldedit:admin_stick", {
 })
 
 minetest.register_tool("worldedit:pick_admin", {
-	description = "Admins Pickaxe",
+	description = "Темная Кирка Админов",
 	privs = {admin_pick=true},
 	inventory_image = "tool_admin_pick.png",
 	range = 10,
+	wield_scale = {x=1.5,y=1.5,z=1},
 	tool_capabilities = {
 		full_punch_interval = 2.0,
 		max_drop_level=1,
