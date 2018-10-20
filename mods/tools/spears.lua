@@ -89,7 +89,7 @@ tools.spear = {
 	galvorn = {
 		description = SL("Galvorn Spear"),
 		wield_image_transform = "^[transformFX",
-		range = 7,
+		range = 8,
 		full_punch_interval = 0.50,
 		max_drop_level=1,
 		snappy={times={[1]=2.3, [2]=1.3, [3]=0.30}, uses=25, maxlevel=1},
@@ -99,7 +99,7 @@ tools.spear = {
 	mithril = {
 		description = SL("Mithril Spear"),
 		wield_image_transform = "^[transformFX",
-		range = 7,
+		range = 8,
 		full_punch_interval = 0.25,
 		max_drop_level=1,
 		snappy={times={[1]=2.00, [2]=1.00, [3]=0.20}, uses=30, maxlevel=2},
