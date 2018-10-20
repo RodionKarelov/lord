@@ -3,6 +3,7 @@ local SL = lord.require_intllib()
 minetest.register_tool("tools:sword_elven", {
 	description = SL("Elven Sword"),
 	inventory_image = "tools_sword_elven.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
 	tool_capabilities = {
 		full_punch_interval = 0.25,
 		max_drop_level=2,
@@ -17,6 +18,7 @@ minetest.register_tool("tools:sword_elven", {
 minetest.register_tool("tools:sword_orc", {
 	description = SL("Orcish Sword"),
 	inventory_image = "tools_sword_orc.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
 	tool_capabilities = {
 		full_punch_interval = 0.75,
 		max_drop_level=2,
@@ -31,6 +33,7 @@ minetest.register_tool("tools:sword_orc", {
 minetest.register_tool("tools:battleaxe_dwarven", {
 	description = SL("Dwarven Battleaxe"),
 	inventory_image = "castle_battleaxe.png",
+	wield_scale = {x=1.5,y=1.5,z=1},
 	tool_capabilities = {
 		full_punch_interval = 2.0,
 		max_drop_level=1,
