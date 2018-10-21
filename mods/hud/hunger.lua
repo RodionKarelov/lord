@@ -89,8 +89,9 @@ if minetest.get_modpath("lottmobs") ~= nil then
 	overwrite("lottmobs:fried_egg", 2)
 	overwrite("lottmobs:horsemeat_cooked", 17)
 	overwrite("lottmobs:horsemeat_raw", 2, "", -3)
-	overwrite("lottmobs:meat", 6)
-	overwrite("lottmobs:meat_raw", 1, "", -4)
+	--overwrite("lottmobs:meat", 6)
+	--overwrite("lottmobs:meat_raw", 1, "", -4)
+	--Removed usual meat
 	overwrite("lottmobs:pork_cooked", 19)
 	overwrite("lottmobs:pork_raw", 2, "", -4)
 	overwrite("lottmobs:rabbit_cooked", 4)
