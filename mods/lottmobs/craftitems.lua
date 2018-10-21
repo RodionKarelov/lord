@@ -1,6 +1,6 @@
 local SL = lord.require_intllib()
 
-minetest.register_craftitem("lottmobs:meat", {
+--[[minetest.register_craftitem("lottmobs:meat", {
 	description = SL("Cooked Meat"),
 	inventory_image = "lottmobs_meat.png",
 	on_use = minetest.item_eat(1),
@@ -16,7 +16,7 @@ minetest.register_craft({
 	type = "cooking",
 	output = "lottmobs:meat",
 	recipe = "lottmobs:meat_raw",
-})
+})]] --Removed usual meat
 
 minetest.register_craftitem("lottmobs:pork_raw", {
 	description = SL("Raw Porkchop"),
