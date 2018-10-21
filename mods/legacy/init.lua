@@ -239,4 +239,7 @@ minetest.register_alias("lottweapons:elven_sword", "tools:sword_elven")
 minetest.register_alias("lottweapons:orc_sword", "tools:sword_orc")
 minetest.register_alias("castle:battleaxe", "tools:battleaxe_dwarven")
 
+minetest.register_alias("lottmobs:meat_raw", "lottmobs:rotten_meat")
+minetest.register_alias("lottmobs:meat", "lottmobs:rotten_meat")
+
 if minetest.settings:get_bool("msg_loading_mods") then minetest.log("action", minetest.get_current_modname().." mod LOADED") end
