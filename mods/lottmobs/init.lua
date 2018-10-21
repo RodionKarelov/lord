@@ -182,10 +182,10 @@ mobs:register_mob("lottmobs:spider", {
 		chance = 10,
 		min = 1,
 		max = 3,},
-		{name = "lottmobs:meat_raw",
+		--[[{name = "lottmobs:meat_raw",
 		chance = 5,
 		min = 1,
-		max = 2,},
+		max = 2,},]] --Removed usual meat
 	},
 	light_resistant = true,
 	drawtype = "front",
