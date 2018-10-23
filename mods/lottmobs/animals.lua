@@ -105,7 +105,7 @@ mobs:register_mob("lottmobs:chicken", {
 	visual = "mesh",
 	mesh = "chicken_model.b3d",
 	textures = {
-		{"lottmobs_chicken.png"},
+		{"lottmobs_chicken_new.png"},
 	},
 	visual_size = {x=2.2, y=2.2},
 
