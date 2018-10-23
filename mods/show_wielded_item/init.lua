@@ -19,7 +19,7 @@ local function set_hud(player)
 		off = {x=0, y=-fixed}
 	else
 		-- Default offset
-		off = {x=0, y=-101}
+		off = {x=0, y=-130}
 
 		if hudbars_mod then
 			-- Tweak offset if hudbars mod was found
