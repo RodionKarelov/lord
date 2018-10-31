@@ -99,8 +99,8 @@ local ring_guide = dofile(minetest.get_modpath("lottblocks")
 	.. "/guide_text/ring_guide.lua")
 
 minetest.register_craftitem("lottblocks:ring_guide", {
-	description = minetest.colorize("mediumspringgreen", SL("Ring Guidebook")),
-	inventory_image = "lottblocks_book_old.png",
+	description = minetest.colorize("ForestGreen", SL("Ring Guidebook 1")),
+	inventory_image = "lottblocks_book_green.png",
 	groups = {book = 1, forbidden = 1},
 	stack_max = 1,
 	text = minetest.deserialize(ring_guide),
@@ -108,3 +108,30 @@ minetest.register_craftitem("lottblocks:ring_guide", {
 		guide_on_use(itemstack, user)
 	end,
 })
+
+local ring_guide2 = dofile(minetest.get_modpath("lottblocks")
+	.. "/guide_text/ring_guide2.lua")
+
+minetest.register_craftitem("lottblocks:ring_guide2", {
+	description = minetest.colorize("Turquoise", SL("Ring Guidebook 2")),
+	inventory_image = "lottblocks_book_turquoise_blue.png",
+	groups = {book = 1, forbidden = 1},
+	stack_max = 1,
+	text = minetest.deserialize(ring_guide2),
+	on_use = function(itemstack, user)
+		guide_on_use(itemstack, user)
+	end,
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "lottblocks:ring_guide2",
+	recipe = {"lottblocks:ring_guide"},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "lottblocks:ring_guide",
+	recipe = {"lottblocks:ring_guide2"},
+})
+
