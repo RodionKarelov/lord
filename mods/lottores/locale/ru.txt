@@ -1,15 +1,12 @@
 ### init.lua ###
 Limestone Ore	=	Известняковая руда
-Rough Rock	=	Раф-роковый блок
+Rough Rock	=	Грубая порода
 Silver Ore	=	Серебряная руда
 Tin Ore	=	Оловянная руда
 Lead Ore	=	Свинцовая руда
 Mithril Ore	=	Мифриловая руда
-Blue Gem Ore	=	Сапфировая жила
-White Gem Ore	=	Алмазная жила
-Red Gem Ore	=	Рубиновая жила
 Limestone Lump	=	Известняк
-Rough Rock Lump	=	Раф-рок
+Rough Rock Lump	=	Кусок грубой породы
 Silver Lump	=	Серебро
 Silver Ingot	=	Слиток серебра
 Tin Lump	=	Олово
@@ -20,9 +17,6 @@ Mithril Lump	=	Мифрил
 Mithril Ingot	=	Слиток мифрила
 Galvorn Ingot	=	Галворн
 Tilkal Ingot	=	Слиток тилкала
-Blue Gem	=	Сапфир
-Red Gem	=	Рубин
-White Gem	=	Ювелирный алмаз
 Tilkal	=	Тилкаловый блок
 Limestone	=	Блок известняка
 Marble	=	Мрамор
