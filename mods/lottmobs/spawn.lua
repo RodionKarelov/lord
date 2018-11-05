@@ -98,4 +98,4 @@ mobs:spawn_specific("lottmobs:hobbit_trader",	{"lottmapgen:shire_grass"},	{"air"
 mobs:spawn_specific("lottmobs:dwarf_trader",	{"lottmapgen:ironhill_grass"},	{"air"}, -1, 20, 30, 90000, 2, -31000, 31000)
 
 --dragons.lua
-mobs:spawn_specific("lottmobs:dragon", {"default:stone"}, {"air"}, 0, -1, 2, 30, 60000, 1, -18000, -19000)
+mobs:spawn_specific("lottmobs:dragon", {"default:stone"}, {"air"}, 0, -1, 2, 30, 600000, 1, -19000, -18000)
