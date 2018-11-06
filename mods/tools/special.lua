@@ -28,6 +28,13 @@ minetest.register_tool("tools:sword_orc", {
 	groups = {steel_item = 1},
 })
 
+minetest.register_tool("tools:banhammer", {
+    description = SL("Dark banhammer"),
+    inventory_image = "tools_banhammer.png",
+    groups = {forbidden = 1},
+    on_use=tools.ban(itemstack, user, pointed_thing)
+})
+
 minetest.register_craft({
 	output = 'tools:sword_elven',
 	recipe = {
